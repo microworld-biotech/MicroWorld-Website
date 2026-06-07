@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Leading provider of diagnostic test kits using immunochromatography technology for rapid diagnostic solutions. Trust Microworld Biotech!"/>
+<meta name="theme-color" content="#daebea"/>
+<title>Microworld Biotech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --mint:#daebea;--teal:#2a8a85;--teal-dark:#1d6360;--teal-light:#e8f5f4;
+  --teal-mid:#4aada8;--text:#1e2d2c;--muted:#5a6e6d;--white:#fff;
+  --off:#f5fbfb;--border:#c8dedd;
+  --sh:0 4px 24px rgba(42,138,133,.10);--shl:0 10px 40px rgba(42,138,133,.15)
+}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Lora',serif;line-height:1.25}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700}
+h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600}
+h3{font-size:1.25rem;font-weight:600}
+h4{font-size:1.05rem;font-weight:600}
+p{line-height:1.75;color:var(--muted)}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(42,138,133,.08)}
+.nav-top{background:var(--teal);text-align:right;padding:6px 32px;font-size:.82rem;font-weight:600;letter-spacing:.04em}
+.nav-top a{color:var(--white);display:inline-flex;align-items:center;gap:6px}
+.nav-top a:hover{opacity:.85}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none}
+.logo-icon{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-dark));display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--white);box-shadow:0 4px 12px rgba(42,138,133,.3);flex-shrink:0}
+.logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--teal-dark);display:block}
+.logo-sub{font-size:.72rem;color:var(--muted);letter-spacing:.08em;font-family:'Raleway',sans-serif;font-weight:500;display:block}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-item{position:relative}
+.nav-link{padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--text);border-radius:6px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:4px;white-space:nowrap;border:none;background:none;font-family:'Raleway',sans-serif}
+.nav-link:hover,.nav-link.active{background:var(--teal-light);color:var(--teal-dark)}
+.nav-link svg{width:12px;height:12px;transition:transform .2s}
+.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shl);min-width:220px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:200}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.drop-item{display:block;padding:11px 18px;font-size:.85rem;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;border-bottom:1px solid var(--border);text-decoration:none}
+.drop-item:last-child{border-bottom:none}
+.drop-item:hover{background:var(--teal-light);color:var(--teal-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--teal-dark);border-radius:2px;transition:all .3s}
+/* MOBILE MENU */
+.mob-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.5)}
+.mob-overlay.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;width:280px;height:100vh;background:var(--white);overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,.15);padding:24px 0;animation:slideIn .25s ease}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mob-close{display:flex;justify-content:flex-end;padding:0 20px 16px;font-size:1.5rem;cursor:pointer;color:var(--muted);background:none;border:none;width:100%}
+.mob-item{padding:13px 24px;font-size:.9rem;font-weight:600;color:var(--text);cursor:pointer;border-bottom:1px solid var(--border);transition:background .15s;display:flex;justify-content:space-between;align-items:center;text-decoration:none}
+.mob-item:hover{background:var(--teal-light);color:var(--teal-dark)}
+.mob-sub{padding:10px 40px;font-size:.85rem;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:1px solid var(--border);text-decoration:none;display:block}
+.mob-sub:hover{background:var(--teal-light);color:var(--teal-dark)}
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal) 55%,var(--teal-mid) 100%);min-height:580px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;z-index:1;padding:70px 24px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);padding:8px 20px;border-radius:100px;font-size:.82rem;font-weight:600;color:var(--white);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
+.hero h1{color:var(--white);margin-bottom:20px}
+.hero .sub{color:rgba(255,255,255,.85);font-size:1.1rem;max-width:520px;margin:0 auto 36px}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .25s;border:2px solid transparent;font-family:'Raleway',sans-serif;text-decoration:none}
+.btn-white{background:var(--white);color:var(--teal-dark)}
+.btn-white:hover{background:var(--mint);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.btn-outline-white{background:transparent;color:var(--white);border-color:rgba(255,255,255,.6)}
+.btn-outline-white:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:var(--white)}
+.btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:var(--sh)}
+.btn-outline-teal{background:transparent;color:var(--teal);border-color:var(--teal)}
+.btn-outline-teal:hover{background:var(--teal-light);transform:translateY(-2px)}
+/* STATS */
+.stats{background:var(--white);border-bottom:1px solid var(--border);padding:28px 24px}
+.stats-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.stat{text-align:center}
+.stat-n{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;color:var(--teal)}
+.stat-l{font-size:.8rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+/* SECTIONS */
+.section{padding:80px 24px}
+.section-alt{background:var(--off)}
+.container{max-width:1160px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:56px}
+.tag{display:inline-block;padding:5px 16px;border-radius:100px;background:var(--teal-light);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.sec-head h2{margin-bottom:14px}
+.divider{width:52px;height:3px;background:var(--teal);border-radius:2px;margin:16px auto 0}
+/* ABOUT GRID */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.about-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--sh);transition:transform .3s,box-shadow .3s}
+.about-card:hover{transform:translateY(-6px);box-shadow:var(--shl)}
+.about-card img{width:100%;height:220px;object-fit:cover}
+.about-body{padding:28px}
+.about-body h4{color:var(--teal-dark);margin-bottom:14px;font-size:1.1rem}
+.about-body p{font-size:.9rem;line-height:1.8;margin-bottom:8px}
+.feat-list{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.feat-item{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text)}
+.feat-item::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+/* VALUES */
+.vals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:16px}
+.val-card{background:var(--teal-light);border-radius:14px;padding:20px 16px;text-align:center;border:1px solid var(--border);transition:background .25s,transform .25s}
+.val-card:hover{background:var(--mint);transform:translateY(-4px)}
+.val-icon{font-size:1.8rem;margin-bottom:10px}
+.val-card h4{color:var(--teal-dark);margin-bottom:6px;font-size:.95rem}
+.val-card p{font-size:.78rem}
+/* PRODUCTS */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:28px}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--sh);transition:all .3s;display:flex;flex-direction:column}
+.prod-card:hover{transform:translateY(-6px);box-shadow:var(--shl)}
+.prod-img{height:200px;overflow:hidden;background:var(--teal-light);display:flex;align-items:center;justify-content:center}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod-card:hover .prod-img img{transform:scale(1.06)}
+.prod-icon{font-size:4rem;opacity:.45}
+.prod-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.prod-body .tag{margin-bottom:10px}
+.prod-body h4{color:var(--text);margin-bottom:10px;font-size:1rem}
+.prod-body p{font-size:.85rem;line-height:1.7;flex:1}
+.prod-foot{padding:0 24px 24px}
+.prod-btn{width:100%;display:block;text-align:center;padding:11px;border-radius:50px;background:var(--teal);color:var(--white);font-size:.85rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:'Raleway',sans-serif;text-decoration:none}
+.prod-btn:hover{background:var(--teal-dark);transform:translateY(-1px)}
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--teal-dark),var(--teal));padding:70px 24px;text-align:center}
+.cta-band h2{color:var(--white);margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,.82);margin-bottom:32px;font-size:1rem;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* FOOTER */
+.footer{background:var(--teal-dark);color:var(--white)}
+.footer-main{max-width:1160px;margin:0 auto;padding:60px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:300px}
+.footer-logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--white)}
+.footer-logo-sub{font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+.foot-col h5{font-family:'Lora',serif;font-size:1rem;margin-bottom:18px}
+.foot-col ul li{margin-bottom:10px}
+.foot-col ul li a{font-size:.85rem;color:rgba(255,255,255,.7);transition:color .2s}
+.foot-col ul li a:hover{color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.15);text-align:center;padding:20px 24px;font-size:.82rem;color:rgba(255,255,255,.55)}
+/* WHATSAPP */
+.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:50px;background:#25D366;color:var(--white);font-size:.9rem;font-weight:700;cursor:pointer;border:none;margin-top:16px;transition:all .2s;font-family:'Raleway',sans-serif;text-decoration:none}
+.wa-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+/* COOKIE */
+.cookie{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--teal-dark);color:var(--white);border-radius:14px;padding:18px 24px;max-width:580px;width:calc(100% - 48px);box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:20px;flex-wrap:wrap;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.cookie h5{font-family:'Lora',serif;font-size:.95rem;margin-bottom:4px}
+.cookie p{font-size:.8rem;color:rgba(255,255,255,.75)}
+.cookie-text{flex:1;min-width:200px}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.c-btn{padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;font-family:'Raleway',sans-serif}
+.c-accept{background:var(--white);color:var(--teal-dark)}
+.c-decline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3)}
+/* TOAST */
+.toast{position:fixed;top:90px;right:24px;z-index:9998;background:var(--teal-dark);color:var(--white);padding:14px 20px;border-radius:12px;font-size:.9rem;font-weight:600;box-shadow:var(--shl);animation:fadeIn .3s ease;display:flex;align-items:center;gap:8px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+/* PAGE TRANSITION */
+main{animation:pageIn .35s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* RESPONSIVE */
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.section{padding:52px 16px}.footer-main{grid-template-columns:1fr}.stats-inner{gap:16px}.hero{min-height:460px}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-top"><a href="tel:+919604629953">📞 +91-9604629953</a></div>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">MB</div>
+      <div><span class="logo-name">Microworld Biotech</span><span class="logo-sub">PRIVATE LIMITED</span></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="our-founders.html">Our Founders</a></li>
+      <li class="nav-item">
+        <button class="nav-link">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <ul class="dropdown">
+          <li><a class="drop-item" href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a></li>
+          <li><a class="drop-item" href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a></li>
+          <li><a class="drop-item" href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a></li>
+          <li><a class="drop-item" href="pregnancy-test-kit.html">Pregnancy Test Kit</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="join-our-team.html">Join Our Team</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="ham" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-overlay" id="mob">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">✕</button>
+    <a class="mob-item" href="index.html">Home</a>
+    <a class="mob-item" href="our-founders.html">Our Founders</a>
+    <div class="mob-item" id="mobProd" style="cursor:pointer">Products <span id="prodArrow">▼</span></div>
+    <div id="mobProdSub" style="display:none">
+      <a class="mob-sub" href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a>
+      <a class="mob-sub" href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a>
+      <a class="mob-sub" href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a>
+      <a class="mob-sub" href="pregnancy-test-kit.html">Pregnancy Test Kit</a>
+    </div>
+    <a class="mob-item" href="join-our-team.html">Join Our Team</a>
+    <a class="mob-item" href="contact-us.html">Contact Us</a>
+    <div style="padding:20px 24px"><a href="tel:+919604629953" style="color:var(--teal);font-weight:700;font-size:.95rem">📞 +91-9604629953</a></div>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🧬 Founded 2023 · Nanded, India</div>
+    <h1>Smart Diagnostics,<br>Better Decisions!</h1>
+    <p class="sub">Advanced rapid test kits using immunochromatography technology — fast, accurate, and accessible for every healthcare setting.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-white" href="#products">View Our Products</a>
+      <a class="btn btn-outline-white" href="contact-us.html">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">4+</div><div class="stat-l">Diagnostic Kits</div></div>
+    <div class="stat"><div class="stat-n">15–20</div><div class="stat-l">Min. Results</div></div>
+    <div class="stat"><div class="stat-n">2023</div><div class="stat-l">Year Founded</div></div>
+    <div class="stat"><div class="stat-n">B2B</div><div class="stat-l">Focused Partner</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">About Us</div>
+      <h2>About Microworld Biotech</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="about-grid">
+
+      <!-- History -->
+      <div class="about-card">
+        <img src="https://img1.wsimg.com/isteam/stock/bGrWp2E/:/cr=t:0%25,l:16.44%25,w:67.12%25,h:100%25/rs=w:600,h:600,cg:true" alt="Modern laboratory" onerror="this.style.display='none'"/>
+        <div class="about-body">
+          <h4>Our History</h4>
+          <p>Founded in 2023, Microworld Biotech Private Limited is driven by a clear mission: to advance diagnostic solutions that are faster, more accessible, and highly reliable — for the benefit of mankind.</p>
+          <p>Established by seasoned professionals with deep expertise in pharmaceuticals and healthcare, the company is built on a practical understanding of real-world diagnostic challenges.</p>
+          <p>As a focused B2B partner, we develop and deliver advanced diagnostic solutions that combine speed, precision, and ease of use — supporting healthcare providers, laboratories, and partners across the value chain.</p>
+          <p>Guided by a strong commitment to quality, innovation, and accessibility, we aim to make reliable diagnostics available where they are needed most.</p>
+        </div>
+      </div>
+
+      <!-- Technology -->
+      <div class="about-card">
+        <img src="https://img1.wsimg.com/isteam/stock/ZzrAn3k/:/rs=w:600,h:600,cg:true,m/cr=w:600,h:600" alt="Pharmaceutical manufacturing" onerror="this.style.display='none'"/>
+        <div class="about-body">
+          <h4>Our Technology</h4>
+          <p>We utilize <strong>advanced Immunochromatography technology</strong>, designed to deliver fast and reliable diagnostic results. What makes our technology different?</p>
+          <div class="feat-list">
+            <div class="feat-item"><strong>High Accuracy:</strong>&nbsp;Precise detection with high sensitivity and specificity, reducing false results.</div>
+            <div class="feat-item"><strong>Rapid Results (15–20 minutes):</strong>&nbsp;Enables immediate clinical decisions.</div>
+            <div class="feat-item"><strong>No Specialized Equipment Required:</strong>&nbsp;Usable in clinics, nursing homes, and field conditions.</div>
+            <div class="feat-item"><strong>Detailed Diagnostic Insights:</strong>&nbsp;Semi-quantitative info such as viral load and antibody levels.</div>
+            <div class="feat-item"><strong>Optimized Storage &amp; Transport:</strong>&nbsp;Controlled temperature handling ensures consistent quality.</div>
+            <div class="feat-item"><strong>Field-Ready Solutions:</strong>&nbsp;Ideal for remote areas, outbreaks, and resource-limited environments.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="about-card">
+        <img src="https://img1.wsimg.com/isteam/stock/mADagle/:/rs=w:600,h:600,cg:true,m/cr=w:600,h:600" alt="Growth and values" onerror="this.style.display='none'"/>
+        <div class="about-body">
+          <h4>Our Values</h4>
+          <p>Our work is guided by a strong set of values that define how we operate and what we stand for:</p>
+          <div class="vals-grid">
+            <div class="val-card"><div class="val-icon">💡</div><h4>Innovation</h4><p>Continuous R&amp;D for next-gen diagnostics.</p></div>
+            <div class="val-card"><div class="val-icon">🎯</div><h4>Accuracy</h4><p>Precise results professionals can trust.</p></div>
+            <div class="val-card"><div class="val-icon">🌍</div><h4>Accessibility</h4><p>Quality care for underserved regions.</p></div>
+            <div class="val-card"><div class="val-icon">💰</div><h4>Affordability</h4><p>Cost-effective without compromising quality.</p></div>
+            <div class="val-card"><div class="val-icon">🤝</div><h4>Commitment</h4><p>Training, service, and consistent supply.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">Portfolio</div>
+      <h2>Our Products</h2>
+      <p>Rapid diagnostic kits designed for accuracy, speed, and ease of use in any healthcare setting.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <div class="prod-img">
+          <img src="https://img1.wsimg.com/isteam/ip/3cafcf7c-419d-46dc-a94f-d6f08e5f337d/Dengue%20Combo%20Test%20Kit.jpeg/:/cr=t:38.31%25,l:9.81%25,w:42.02%25,h:32.4%25/rs=w:400,h:300,cg:true,m" alt="Dengue Combo Test Kit" onerror="this.parentElement.innerHTML='<div class=prod-icon>🦟</div>'"/>
+        </div>
+        <div class="prod-body">
+          <span class="tag">Rapid Test</span>
+          <h4>Dengue Combo Test Kit</h4>
+          <p>Advanced rapid diagnostic solution for qualitative detection of Dengue NS1 antigen and IgG/IgM antibodies in human serum or plasma.</p>
+        </div>
+        <div class="prod-foot"><a class="prod-btn" href="dengue-combo-test-kit.html">Visit Product →</a></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><div class="prod-icon">🔬</div></div>
+        <div class="prod-body">
+          <span class="tag">Rapid Test</span>
+          <h4>Malaria Antigen Test Kit</h4>
+          <p>High-sensitivity RDT for qualitative detection and differentiation of <em>Plasmodium falciparum</em> and <em>Plasmodium vivax</em> from a human blood sample.</p>
+        </div>
+        <div class="prod-foot"><a class="prod-btn" href="malaria-antigen-test-kit.html">Visit Product →</a></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><div class="prod-icon">🧪</div></div>
+        <div class="prod-body">
+          <span class="tag">Rapid Test</span>
+          <h4>Typhoid Rapid Test Kit</h4>
+          <p>High-performance diagnostic for simultaneous detection and differentiation of IgG and IgM antibodies to <em>Salmonella typhi</em> in serum or plasma.</p>
+        </div>
+        <div class="prod-foot"><a class="prod-btn" href="typhoid-rapid-test-kit.html">Visit Product →</a></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img"><div class="prod-icon">🤱</div></div>
+        <div class="prod-body">
+          <span class="tag">hCG Detection</span>
+          <h4>MummySure Pregnancy hCG Detection Test Kit</h4>
+          <p>A rapid diagnostic tool designed for the early and accurate detection of pregnancy via human Chorionic Gonadotropin (hCG) detection.</p>
+        </div>
+        <div class="prod-foot"><a class="prod-btn" href="pregnancy-test-kit.html">Visit Product →</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>Ready to Partner With Us?</h2>
+  <p>We support healthcare providers, laboratories, and partners across the value chain with reliable B2B rapid diagnostic solutions.</p>
+  <div class="cta-btns">
+    <a class="btn btn-white" href="contact-us.html">Get In Touch</a>
+    <a class="btn btn-outline-white wa-btn" href="https://wa.me/919604629953" target="_blank" rel="noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.552 4.1 1.518 5.822L.057 23.927l6.263-1.445A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.796 9.796 0 01-4.998-1.37l-.358-.213-3.718.858.883-3.633-.234-.374A9.765 9.765 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"/></svg>
+      WhatsApp Us
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo-icon">MB</div>
+        <div><span class="footer-logo-name">Microworld Biotech</span><br><span class="footer-logo-sub">PRIVATE LIMITED</span></div>
+      </div>
+      <p>Smart Diagnostics, Better Decisions! Leading provider of diagnostic test kits using immunochromatography technology.</p>
+      <a class="wa-btn" href="https://wa.me/919604629953" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.552 4.1 1.518 5.822L.057 23.927l6.263-1.445A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.796 9.796 0 01-4.998-1.37l-.358-.213-3.718.858.883-3.633-.234-.374A9.765 9.765 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+    <div class="foot-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-founders.html">Our Founders</a></li>
+        <li><a href="join-our-team.html">Join Our Team</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Our Products</h5>
+      <ul>
+        <li><a href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a></li>
+        <li><a href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a></li>
+        <li><a href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a></li>
+        <li><a href="pregnancy-test-kit.html">Pregnancy Test Kit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">Copyright © 2026 Microworld Biotech — All Rights Reserved. &nbsp;|&nbsp; Plot No B-95, Krushnoor MIDC, TQ. Naigaon, Dist. Nanded — 431709</div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie" id="cookie">
+  <div class="cookie-text">
+    <h5>This website uses cookies.</h5>
+    <p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+  </div>
+  <div class="cookie-btns">
+    <button class="c-btn c-decline" onclick="document.getElementById('cookie').remove()">Decline</button>
+    <button class="c-btn c-accept" onclick="document.getElementById('cookie').remove()">Accept</button>
+  </div>
+</div>
+
+<script>
+// Mobile menu
+const ham=document.getElementById('ham'),mob=document.getElementById('mob'),mobClose=document.getElementById('mobClose');
+ham.addEventListener('click',()=>mob.classList.add('open'));
+mobClose.addEventListener('click',()=>mob.classList.remove('open'));
+mob.addEventListener('click',e=>{if(e.target===mob)mob.classList.remove('open')});
+// Products accordion
+const mobProd=document.getElementById('mobProd'),mobProdSub=document.getElementById('mobProdSub'),prodArrow=document.getElementById('prodArrow');
+mobProd.addEventListener('click',()=>{const o=mobProdSub.style.display==='block';mobProdSub.style.display=o?'none':'block';prodArrow.textContent=o?'▼':'▲'});
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+</script>
+</body>
+</html>

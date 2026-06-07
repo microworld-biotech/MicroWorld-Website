@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact Us | Microworld Biotech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--mint:#daebea;--teal:#2a8a85;--teal-dark:#1d6360;--teal-light:#e8f5f4;--teal-mid:#4aada8;--text:#1e2d2c;--muted:#5a6e6d;--white:#fff;--off:#f5fbfb;--border:#c8dedd;--sh:0 4px 24px rgba(42,138,133,.10);--shl:0 10px 40px rgba(42,138,133,.15)}
+html{scroll-behavior:smooth}body{font-family:'Raleway',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Lora',serif;line-height:1.25}h1{font-size:clamp(2rem,5vw,3rem);font-weight:700}h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:600}h3{font-size:1.2rem;font-weight:600}h4{font-size:1rem;font-weight:600}p{line-height:1.75;color:var(--muted)}a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
+.navbar{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(42,138,133,.08)}
+.nav-top{background:var(--teal);text-align:right;padding:6px 32px;font-size:.82rem;font-weight:600}.nav-top a{color:var(--white);display:inline-flex;align-items:center;gap:6px}.nav-top a:hover{opacity:.85}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo-icon{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-dark));display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--white);box-shadow:0 4px 12px rgba(42,138,133,.3);flex-shrink:0}
+.logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--teal-dark);display:block}.logo-sub{font-size:.72rem;color:var(--muted);letter-spacing:.08em;font-family:'Raleway',sans-serif;font-weight:500;display:block}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}.nav-item{position:relative}
+.nav-link{padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--text);border-radius:6px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:4px;white-space:nowrap;border:none;background:none;font-family:'Raleway',sans-serif;text-decoration:none}
+.nav-link:hover,.nav-link.active{background:var(--teal-light);color:var(--teal-dark)}.nav-link svg{width:12px;height:12px;transition:transform .2s}.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shl);min-width:220px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:200}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}.drop-item{display:block;padding:11px 18px;font-size:.85rem;font-weight:500;color:var(--text);transition:background .15s;border-bottom:1px solid var(--border);text-decoration:none}.drop-item:last-child{border-bottom:none}.drop-item:hover{background:var(--teal-light);color:var(--teal-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}.hamburger span{display:block;width:24px;height:2.5px;background:var(--teal-dark);border-radius:2px}
+.mob-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.5)}.mob-overlay.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;width:280px;height:100vh;background:var(--white);overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,.15);padding:24px 0;animation:slideIn .25s ease}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mob-close{display:flex;justify-content:flex-end;padding:0 20px 16px;font-size:1.5rem;cursor:pointer;background:none;border:none;width:100%;color:var(--muted)}
+.mob-item{padding:13px 24px;font-size:.9rem;font-weight:600;color:var(--text);cursor:pointer;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:background .15s}.mob-item:hover{background:var(--teal-light);color:var(--teal-dark)}
+.mob-sub{padding:10px 40px;font-size:.85rem;font-weight:500;color:var(--muted);border-bottom:1px solid var(--border);text-decoration:none;display:block}.mob-sub:hover{background:var(--teal-light);color:var(--teal-dark)}
+.page-hero{background:linear-gradient(135deg,var(--teal-dark),var(--teal));padding:70px 24px 60px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M20 20c0-11 9-20 20-20v40C29 40 20 31 20 20zm0 0c0 11-9 20-20 20V0c11 0 20 9 20 20z'/%3E%3C/g%3E%3C/svg%3E")}
+.page-hero h1{color:var(--white);position:relative;z-index:1}.page-hero .subtitle{color:rgba(255,255,255,.82);font-size:1rem;margin-top:10px;position:relative;z-index:1;font-style:italic}
+.breadcrumb{background:var(--teal-light);padding:12px 24px;border-bottom:1px solid var(--border)}.breadcrumb-inner{max-width:1160px;margin:0 auto;font-size:.83rem;color:var(--muted);display:flex;align-items:center;gap:8px}.breadcrumb a{color:var(--teal);font-weight:600}.breadcrumb a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:50px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .25s;border:2px solid transparent;font-family:'Raleway',sans-serif;text-decoration:none}
+.btn-teal{background:var(--teal);color:var(--white)}.btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:var(--sh)}
+.btn-outline-teal{background:transparent;color:var(--teal);border-color:var(--teal)}.btn-outline-teal:hover{background:var(--teal-light);transform:translateY(-2px)}
+.tag{display:inline-block;padding:5px 16px;border-radius:100px;background:var(--teal-light);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.divider{width:52px;height:3px;background:var(--teal);border-radius:2px;margin:16px auto 0}
+.form-group{margin-bottom:18px}.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)}
+.form-control{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:'Raleway',sans-serif;background:var(--white);color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none}
+.form-control:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,138,133,.12)}textarea.form-control{resize:vertical;min-height:100px}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:50px;background:#25D366;color:var(--white);font-size:.9rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:'Raleway',sans-serif;text-decoration:none}.wa-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+.footer{background:var(--teal-dark);color:var(--white)}.footer-main{max-width:1160px;margin:0 auto;padding:60px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:300px}.footer-logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--white)}.footer-logo-sub{font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+.foot-col h5{font-family:'Lora',serif;font-size:1rem;margin-bottom:18px}.foot-col ul li{margin-bottom:10px}.foot-col ul li a{font-size:.85rem;color:rgba(255,255,255,.7);transition:color .2s}.foot-col ul li a:hover{color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.15);text-align:center;padding:20px 24px;font-size:.82rem;color:rgba(255,255,255,.55)}
+.cookie{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--teal-dark);color:var(--white);border-radius:14px;padding:18px 24px;max-width:580px;width:calc(100% - 48px);box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:20px;flex-wrap:wrap;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.cookie h5{font-family:'Lora',serif;font-size:.95rem;margin-bottom:4px}.cookie p{font-size:.8rem;color:rgba(255,255,255,.75)}.cookie-text{flex:1;min-width:200px}.cookie-btns{display:flex;gap:10px}
+.c-btn{padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;font-family:'Raleway',sans-serif}.c-accept{background:var(--white);color:var(--teal-dark)}.c-decline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3)}
+.toast{position:fixed;top:90px;right:24px;z-index:9998;background:var(--teal-dark);color:var(--white);padding:14px 20px;border-radius:12px;font-size:.9rem;font-weight:600;box-shadow:var(--shl);animation:fadeIn .3s ease;display:none}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:pageIn .35s ease}@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.footer-main{grid-template-columns:1fr}}
+/* CONTACT HERO */
+.contact-hero{background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal) 55%,var(--teal-mid) 100%);padding:80px 24px;text-align:center;position:relative;overflow:hidden}
+.contact-hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
+.contact-hero-content{position:relative;z-index:1}
+.contact-hero h1{color:var(--white);margin-bottom:14px}
+.contact-hero p{color:rgba(255,255,255,.85);font-size:1rem;max-width:500px;margin:0 auto;font-style:italic}
+/* BREADCRUMB */
+.breadcrumb{background:var(--teal-light);padding:12px 24px;border-bottom:1px solid var(--border)}
+.breadcrumb-inner{max-width:1160px;margin:0 auto;font-size:.83rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.breadcrumb a{color:var(--teal);font-weight:600}.breadcrumb a:hover{text-decoration:underline}
+/* CONTACT SECTION */
+.contact-section{padding:72px 24px;background:var(--off)}
+.contact-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:start}
+/* INFO CARD */
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:36px;box-shadow:var(--sh)}
+.info-card h2{margin-bottom:24px;font-size:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid var(--border)}
+.contact-item:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ci-icon{width:46px;height:46px;flex-shrink:0;background:var(--teal-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--teal)}
+.ci-text strong{display:block;font-size:.78rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;font-family:'Raleway',sans-serif}
+.ci-text span,.ci-text a{font-size:.93rem;color:var(--text);line-height:1.6;display:block}
+.ci-text a{color:var(--teal);font-weight:600}
+.ci-text a:hover{text-decoration:underline}
+.ci-text .wa-link{color:#25D366;font-weight:600}
+.ci-text .wa-link:hover{text-decoration:underline}
+/* HOURS TABLE */
+.hours-wrap{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:32px;box-shadow:var(--sh);margin-top:24px}
+.hours-wrap h3{font-size:1.1rem;color:var(--text);margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table tr{border-bottom:1px solid var(--border);transition:background .15s}
+.hours-table tr:hover{background:var(--off)}
+.hours-table tr:last-child{border-bottom:none}
+.hours-table td{padding:11px 8px;font-size:.87rem}
+.hours-table td:first-child{color:var(--text);font-weight:500;width:55%}
+.hours-table td:last-child{text-align:right;font-weight:700;color:var(--text)}
+.hours-table tr.today td{color:var(--teal-dark);font-weight:700}
+.hours-table tr.today td:last-child{color:var(--teal)}
+.today-badge{display:inline-block;padding:2px 8px;background:var(--teal);color:var(--white);border-radius:100px;font-size:.68rem;font-weight:700;margin-left:6px;vertical-align:middle}
+.closed{color:#e05555 !important}
+/* MAP */
+.map-wrap{margin-top:24px;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh)}
+.map-wrap iframe{display:block;width:100%;height:220px;border:none}
+/* FORM CARD */
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:36px;box-shadow:var(--sh)}
+.form-card h2{margin-bottom:6px}
+.form-card .fc-sub{font-size:.9rem;color:var(--muted);margin-bottom:28px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:7px;color:var(--text)}
+.form-group label span{color:#e55}
+.form-control{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:'Raleway',sans-serif;background:var(--white);color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none}
+.form-control:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,138,133,.12)}
+textarea.form-control{resize:vertical;min-height:120px}
+select.form-control{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6e6d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{width:100%;padding:14px;border-radius:50px;background:var(--teal);color:var(--white);font-size:.97rem;font-weight:700;cursor:pointer;border:none;transition:all .25s;font-family:'Raleway',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:4px}
+.submit-btn:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:var(--sh)}
+.recaptcha-note{font-size:.75rem;text-align:center;margin-top:12px;color:var(--muted)}.recaptcha-note a{color:var(--teal)}
+.form-divider{border:none;border-top:1px solid var(--border);margin:24px 0}
+.wa-section{text-align:center}
+.wa-section p{font-size:.88rem;color:var(--muted);margin-bottom:14px}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border-radius:50px;background:#25D366;color:var(--white);font-size:.93rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:'Raleway',sans-serif;text-decoration:none}
+.wa-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+.success-msg{display:none;background:var(--teal-light);border:1.5px solid var(--teal);border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:.9rem;font-weight:600;color:var(--teal-dark);align-items:center;gap:10px}
+/* QUICK CONTACT STRIP */
+.quick-strip{background:linear-gradient(135deg,var(--teal-dark),var(--teal));padding:56px 24px}
+.quick-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.quick-item{padding:24px 16px}
+.quick-icon{font-size:2rem;margin-bottom:12px}
+.quick-item h4{color:var(--white);margin-bottom:8px;font-size:1rem}
+.quick-item a,.quick-item p{color:rgba(255,255,255,.85);font-size:.9rem;display:block}
+.quick-item a{font-weight:600;text-decoration:none}
+.quick-item a:hover{color:var(--white);text-decoration:underline}
+.quick-divider{border-left:1px solid rgba(255,255,255,.2)}
+/* FAQ */
+.faq-section{padding:72px 24px;background:var(--white)}
+.faq-inner{max-width:780px;margin:0 auto}
+.faq-head{text-align:center;margin-bottom:44px}
+.tag{display:inline-block;padding:5px 16px;border-radius:100px;background:var(--teal-light);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.divider{width:52px;height:3px;background:var(--teal);border-radius:2px;margin:16px auto 0}
+.faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:box-shadow .2s}
+.faq-item:hover{box-shadow:var(--sh)}
+.faq-q{padding:18px 22px;font-size:.93rem;font-weight:700;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--white);transition:background .2s;user-select:none}
+.faq-q:hover{background:var(--off)}
+.faq-q.open{background:var(--teal-light);color:var(--teal-dark)}
+.faq-arrow{font-size:1rem;transition:transform .3s;flex-shrink:0}
+.faq-q.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 22px 18px;font-size:.9rem;color:var(--muted);line-height:1.75;border-top:1px solid var(--border);padding-top:16px}
+.faq-a.open{display:block}
+/* FOOTER */
+.footer{background:var(--teal-dark);color:var(--white)}
+.footer-main{max-width:1160px;margin:0 auto;padding:60px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:300px}
+.footer-logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--white)}.footer-logo-sub{font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+.foot-col h5{font-family:'Lora',serif;font-size:1rem;margin-bottom:18px}.foot-col ul li{margin-bottom:10px}.foot-col ul li a{font-size:.85rem;color:rgba(255,255,255,.7);transition:color .2s}.foot-col ul li a:hover{color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.15);text-align:center;padding:20px 24px;font-size:.82rem;color:rgba(255,255,255,.55)}
+.cookie{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--teal-dark);color:var(--white);border-radius:14px;padding:18px 24px;max-width:580px;width:calc(100% - 48px);box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:20px;flex-wrap:wrap;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.cookie h5{font-family:'Lora',serif;font-size:.95rem;margin-bottom:4px}.cookie p{font-size:.8rem;color:rgba(255,255,255,.75)}.cookie-text{flex:1;min-width:200px}.cookie-btns{display:flex;gap:10px}
+.c-btn{padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;font-family:'Raleway',sans-serif}.c-accept{background:var(--white);color:var(--teal-dark)}.c-decline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3)}
+main{animation:pageIn .35s ease}@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:960px){.contact-inner{grid-template-columns:1fr}.quick-inner{grid-template-columns:1fr;gap:0}.quick-divider{border-left:none;border-top:1px solid rgba(255,255,255,.2)}.nav-links{display:none}.hamburger{display:flex}.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.contact-section{padding:48px 16px}.form-card{padding:24px 18px}.info-card{padding:24px 18px}.hours-wrap{padding:24px 18px}.form-row{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-top"><a href="tel:+919604629953">📞 +91-9604629953</a></div>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><div class="logo-icon">MB</div><div><span class="logo-name">Microworld Biotech</span><span class="logo-sub">PRIVATE LIMITED</span></div></a>
+    <ul class="nav-links">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="our-founders.html">Our Founders</a></li>
+      <li class="nav-item">
+        <button class="nav-link">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <ul class="dropdown">
+          <li><a class="drop-item" href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a></li>
+          <li><a class="drop-item" href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a></li>
+          <li><a class="drop-item" href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a></li>
+          <li><a class="drop-item" href="pregnancy-test-kit.html">Pregnancy Test Kit</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="join-our-team.html">Join Our Team</a></li>
+      <li class="nav-item"><a class="nav-link active" href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-overlay" id="mob">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">✕</button>
+    <a class="mob-item" href="index.html">Home</a>
+    <a class="mob-item" href="our-founders.html">Our Founders</a>
+    <div class="mob-item" id="mobProd">Products <span id="prodArrow">▼</span></div>
+    <div id="mobProdSub" style="display:none">
+      <a class="mob-sub" href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a>
+      <a class="mob-sub" href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a>
+      <a class="mob-sub" href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a>
+      <a class="mob-sub" href="pregnancy-test-kit.html">Pregnancy Test Kit</a>
+    </div>
+    <a class="mob-item" href="join-our-team.html">Join Our Team</a>
+    <a class="mob-item" href="contact-us.html">Contact Us</a>
+    <div style="padding:20px 24px"><a href="tel:+919604629953" style="color:var(--teal);font-weight:700">📞 +91-9604629953</a></div>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-hero-content">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:7px 18px;border-radius:100px;font-size:.8rem;font-weight:700;color:var(--white);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px">📬 Get In Touch</div>
+    <h1>Contact Us</h1>
+    <p>Better yet, see us in person! We love our customers. Visit us during business hours or reach out any time.</p>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner"><a href="index.html">Home</a> <span>›</span> <span>Contact Us</span></div>
+</div>
+
+<!-- QUICK CONTACT STRIP -->
+<section class="quick-strip">
+  <div class="quick-inner">
+    <div class="quick-item">
+      <div class="quick-icon">📞</div>
+      <h4>Call Us</h4>
+      <a href="tel:+919604629953">+91-9604629953</a>
+      <p style="margin-top:4px;font-size:.82rem;opacity:.75">Mon–Fri, 9 AM – 6 PM</p>
+    </div>
+    <div class="quick-item quick-divider">
+      <div class="quick-icon">✉️</div>
+      <h4>Email Us</h4>
+      <a href="mailto:info@microworldbiotech.com">info@microworldbiotech.com</a>
+      <p style="margin-top:4px;font-size:.82rem;opacity:.75">We reply within 24 hours</p>
+    </div>
+    <div class="quick-item quick-divider">
+      <div class="quick-icon">💬</div>
+      <h4>WhatsApp</h4>
+      <a href="https://wa.me/919604629953" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+      <p style="margin-top:4px;font-size:.82rem;opacity:.75">Quick B2B enquiries welcome</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- LEFT COL: Info + Hours + Map -->
+    <div>
+      <div class="info-card">
+        <h2>Microworld Biotech PVT LTD</h2>
+
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-text">
+            <strong>Address</strong>
+            <span>Plot No B-95, Krushnoor MIDC,</span>
+            <span>TQ. Naigaon, Dist. Nanded,</span>
+            <span>Maharashtra — Pin Code: 431709</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-text">
+            <strong>Phone</strong>
+            <a href="tel:+919604629953">+91-9604629953</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div class="ci-text">
+            <strong>Email</strong>
+            <a href="mailto:info@microworldbiotech.com">info@microworldbiotech.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon" style="background:#e8f8f0;color:#25D366">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.552 4.1 1.518 5.822L.057 23.927l6.263-1.445A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.796 9.796 0 01-4.998-1.37l-.358-.213-3.718.858.883-3.633-.234-.374A9.765 9.765 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"/></svg>
+          </div>
+          <div class="ci-text">
+            <strong>WhatsApp</strong>
+            <a class="wa-link" href="https://wa.me/919604629953" target="_blank" rel="noreferrer">Message us on WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOURS -->
+      <div class="hours-wrap">
+        <h3>🕐 Business Hours</h3>
+        <table class="hours-table" id="hoursTable">
+          <tbody>
+            <tr data-day="1"><td>Monday</td><td>9:00 AM – 6:00 PM</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>9:00 AM – 6:00 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>9:00 AM – 6:00 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>9:00 AM – 6:00 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>9:00 AM – 6:00 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>10:00 AM – 4:00 PM</td></tr>
+            <tr data-day="0"><td>Sunday</td><td class="closed">Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-wrap">
+        <iframe
+          title="Microworld Biotech Location — Krushnoor MIDC, Nanded"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30107.90339937!2d77.2954!3d18.4089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf1c1f8fd0a5af%3A0x0!2zS3J1c2hub29yIE1JREMsIE5hbmRlZA!5e0!3m2!1sen!2sin!4v1717000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT COL: FORM -->
+    <div>
+      <div class="form-card">
+        <h2>Drop Us a Line!</h2>
+        <p class="fc-sub">Fill in the form below and our team will get back to you within 24 hours. For urgent B2B enquiries, WhatsApp us directly.</p>
+
+        <div id="successMsg" class="success-msg">✅ Message sent successfully! We'll get back to you soon.</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span>*</span></label>
+            <input class="form-control" id="cfname" placeholder="First name"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name <span>*</span></label>
+            <input class="form-control" id="clname" placeholder="Last name"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address <span>*</span></label>
+          <input class="form-control" id="cemail" type="email" placeholder="your@email.com"/>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input class="form-control" id="cphone" type="tel" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+
+        <div class="form-group">
+          <label>Organisation / Company</label>
+          <input class="form-control" id="corg" placeholder="Hospital, Clinic, Lab name..."/>
+        </div>
+
+        <div class="form-group">
+          <label>Subject / Enquiry Type</label>
+          <select class="form-control" id="csubject">
+            <option value="">— Select subject —</option>
+            <option>Product Enquiry &amp; Pricing</option>
+            <option>Request a Sample</option>
+            <option>Bulk / B2B Order</option>
+            <option>Distribution Partnership</option>
+            <option>Technical Support</option>
+            <option>Careers</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message <span>*</span></label>
+          <textarea class="form-control" id="cmsg" placeholder="Tell us how we can help — product details, quantity, region, questions, etc."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="sendMessage()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Send Message
+        </button>
+
+        <p class="recaptcha-note">Protected by reCAPTCHA — <a href="https://policies.google.com/privacy">Privacy Policy</a> &amp; <a href="https://policies.google.com/terms">Terms of Service</a>.</p>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0"/>
+
+        <div class="wa-section">
+          <p>Prefer instant communication? Message us on WhatsApp for quick B2B enquiries:</p>
+          <a class="wa-btn" href="https://wa.me/919604629953" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.552 4.1 1.518 5.822L.057 23.927l6.263-1.445A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.796 9.796 0 01-4.998-1.37l-.358-.213-3.718.858.883-3.633-.234-.374A9.765 9.765 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"/></svg>
+            Message us on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-head">
+      <div class="tag">FAQ</div>
+      <h2 style="margin-top:12px">Frequently Asked Questions</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Are your test kits available for individual purchase or B2B only? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Our products are primarily designed for B2B customers — hospitals, diagnostic labs, clinics, nursing homes, distributors, and NGOs. For individual purchases, please contact us and we will connect you with a nearby authorised distributor.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the minimum order quantity (MOQ)? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">MOQ varies by product and geography. Please reach out to us via the contact form or WhatsApp with your requirements and we will share specific pricing and MOQ details promptly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you offer product samples for evaluation? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Yes, we provide product samples to verified healthcare institutions and distributors for evaluation purposes. Please use the contact form above and select "Request a Sample" as the subject to get started.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How long does delivery take across India? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Delivery timelines depend on your location and order volume. Typically, orders are processed and dispatched within 2–3 business days. Standard delivery across India takes 3–7 business days. Expedited shipping can be arranged for urgent orders.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do your test kits require cold chain storage? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Our kits are designed for stability at room temperature (2–30°C) during transport and field use, making them suitable for remote settings. However, for optimal shelf life, storage within the specified temperature range on the product label is recommended.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Are your products certified and regulatory compliant? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Yes, all Microworld Biotech products are developed in compliance with applicable regulatory standards. For specific certification details or documentation requests, please contact us directly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you provide after-sales support and training? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Absolutely. We are committed to full customer support including product training, troubleshooting assistance, and guidance on kit usage. Contact us anytime and our technical team will be happy to assist.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px"><div class="logo-icon">MB</div><div><span class="footer-logo-name">Microworld Biotech</span><br><span class="footer-logo-sub">PRIVATE LIMITED</span></div></div>
+      <p>Smart Diagnostics, Better Decisions! Leading provider of diagnostic test kits using immunochromatography technology.</p>
+      <a class="wa-btn" href="https://wa.me/919604629953" target="_blank" rel="noreferrer" style="margin-top:16px">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.552 4.1 1.518 5.822L.057 23.927l6.263-1.445A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.796 9.796 0 01-4.998-1.37l-.358-.213-3.718.858.883-3.633-.234-.374A9.765 9.765 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+    <div class="foot-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="our-founders.html">Our Founders</a></li><li><a href="join-our-team.html">Join Our Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div>
+    <div class="foot-col"><h5>Our Products</h5><ul><li><a href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a></li><li><a href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a></li><li><a href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a></li><li><a href="pregnancy-test-kit.html">Pregnancy Test Kit</a></li></ul></div>
+  </div>
+  <div class="footer-bot">Copyright © 2026 Microworld Biotech — All Rights Reserved. &nbsp;|&nbsp; Plot No B-95, Krushnoor MIDC, TQ. Naigaon, Dist. Nanded — 431709</div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <div class="cookie-text"><h5>This website uses cookies.</h5><p>We use cookies to analyze website traffic and optimize your website experience. By accepting, your data will be aggregated with all other user data.</p></div>
+  <div class="cookie-btns">
+    <button class="c-btn c-decline" onclick="document.getElementById('cookie').remove()">Decline</button>
+    <button class="c-btn c-accept" onclick="document.getElementById('cookie').remove()">Accept</button>
+  </div>
+</div>
+
+<script>
+// Mobile menu
+const ham=document.getElementById('ham'),mob=document.getElementById('mob'),mobClose=document.getElementById('mobClose');
+ham.addEventListener('click',()=>mob.classList.add('open'));
+mobClose.addEventListener('click',()=>mob.classList.remove('open'));
+mob.addEventListener('click',e=>{if(e.target===mob)mob.classList.remove('open')});
+const mobProd=document.getElementById('mobProd'),sub=document.getElementById('mobProdSub'),arr=document.getElementById('prodArrow');
+mobProd.addEventListener('click',()=>{const o=sub.style.display==='block';sub.style.display=o?'none':'block';arr.textContent=o?'▼':'▲'});
+
+// Highlight today's hours
+(function(){
+  const today=new Date().getDay();
+  const rows=document.querySelectorAll('#hoursTable tr[data-day]');
+  rows.forEach(row=>{
+    if(parseInt(row.getAttribute('data-day'))===today){
+      row.classList.add('today');
+      const td=row.querySelector('td:first-child');
+      const badge=document.createElement('span');
+      badge.className='today-badge';badge.textContent='Today';
+      td.appendChild(badge);
+    }
+  });
+})();
+
+// Contact form
+function sendMessage(){
+  const fn=document.getElementById('cfname').value.trim();
+  const ln=document.getElementById('clname').value.trim();
+  const em=document.getElementById('cemail').value.trim();
+  const msg=document.getElementById('cmsg').value.trim();
+  if(!fn||!ln||!em){alert('Please fill in First Name, Last Name, and Email.');return;}
+  if(!/^\S+@\S+\.\S+$/.test(em)){alert('Please enter a valid email address.');return;}
+  if(!msg){alert('Please enter a message.');return;}
+  const s=document.getElementById('successMsg');s.style.display='flex';
+  ['cfname','clname','cemail','cphone','corg','csubject','cmsg'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value='';
+  });
+  s.scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(()=>{s.style.display='none'},6000);
+}
+
+// FAQ accordion
+function toggleFaq(el){
+  const answer=el.nextElementSibling;
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open')});
+  if(!isOpen){el.classList.add('open');answer.classList.add('open');}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Join Our Team | Microworld Biotech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--mint:#daebea;--teal:#2a8a85;--teal-dark:#1d6360;--teal-light:#e8f5f4;--teal-mid:#4aada8;--text:#1e2d2c;--muted:#5a6e6d;--white:#fff;--off:#f5fbfb;--border:#c8dedd;--sh:0 4px 24px rgba(42,138,133,.10);--shl:0 10px 40px rgba(42,138,133,.15)}
+html{scroll-behavior:smooth}body{font-family:'Raleway',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Lora',serif;line-height:1.25}h1{font-size:clamp(2rem,5vw,3rem);font-weight:700}h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:600}h3{font-size:1.2rem;font-weight:600}h4{font-size:1rem;font-weight:600}p{line-height:1.75;color:var(--muted)}a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
+.navbar{position:sticky;top:0;z-index:1000;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(42,138,133,.08)}
+.nav-top{background:var(--teal);text-align:right;padding:6px 32px;font-size:.82rem;font-weight:600}.nav-top a{color:var(--white);display:inline-flex;align-items:center;gap:6px}.nav-top a:hover{opacity:.85}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo-icon{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-dark));display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--white);box-shadow:0 4px 12px rgba(42,138,133,.3);flex-shrink:0}
+.logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--teal-dark);display:block}.logo-sub{font-size:.72rem;color:var(--muted);letter-spacing:.08em;font-family:'Raleway',sans-serif;font-weight:500;display:block}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}.nav-item{position:relative}
+.nav-link{padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--text);border-radius:6px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:4px;white-space:nowrap;border:none;background:none;font-family:'Raleway',sans-serif;text-decoration:none}
+.nav-link:hover,.nav-link.active{background:var(--teal-light);color:var(--teal-dark)}.nav-link svg{width:12px;height:12px;transition:transform .2s}.nav-item:hover .nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shl);min-width:220px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s;z-index:200}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}.drop-item{display:block;padding:11px 18px;font-size:.85rem;font-weight:500;color:var(--text);transition:background .15s;border-bottom:1px solid var(--border);text-decoration:none}.drop-item:last-child{border-bottom:none}.drop-item:hover{background:var(--teal-light);color:var(--teal-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}.hamburger span{display:block;width:24px;height:2.5px;background:var(--teal-dark);border-radius:2px}
+.mob-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.5)}.mob-overlay.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;width:280px;height:100vh;background:var(--white);overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,.15);padding:24px 0;animation:slideIn .25s ease}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mob-close{display:flex;justify-content:flex-end;padding:0 20px 16px;font-size:1.5rem;cursor:pointer;background:none;border:none;width:100%;color:var(--muted)}
+.mob-item{padding:13px 24px;font-size:.9rem;font-weight:600;color:var(--text);cursor:pointer;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:background .15s}.mob-item:hover{background:var(--teal-light);color:var(--teal-dark)}
+.mob-sub{padding:10px 40px;font-size:.85rem;font-weight:500;color:var(--muted);border-bottom:1px solid var(--border);text-decoration:none;display:block}.mob-sub:hover{background:var(--teal-light);color:var(--teal-dark)}
+.page-hero{background:linear-gradient(135deg,var(--teal-dark),var(--teal));padding:70px 24px 60px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M20 20c0-11 9-20 20-20v40C29 40 20 31 20 20zm0 0c0 11-9 20-20 20V0c11 0 20 9 20 20z'/%3E%3C/g%3E%3C/svg%3E")}
+.page-hero h1{color:var(--white);position:relative;z-index:1}.page-hero .subtitle{color:rgba(255,255,255,.82);font-size:1rem;margin-top:10px;position:relative;z-index:1;font-style:italic}
+.breadcrumb{background:var(--teal-light);padding:12px 24px;border-bottom:1px solid var(--border)}.breadcrumb-inner{max-width:1160px;margin:0 auto;font-size:.83rem;color:var(--muted);display:flex;align-items:center;gap:8px}.breadcrumb a{color:var(--teal);font-weight:600}.breadcrumb a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:50px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .25s;border:2px solid transparent;font-family:'Raleway',sans-serif;text-decoration:none}
+.btn-teal{background:var(--teal);color:var(--white)}.btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:var(--sh)}
+.btn-outline-teal{background:transparent;color:var(--teal);border-color:var(--teal)}.btn-outline-teal:hover{background:var(--teal-light);transform:translateY(-2px)}
+.tag{display:inline-block;padding:5px 16px;border-radius:100px;background:var(--teal-light);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.divider{width:52px;height:3px;background:var(--teal);border-radius:2px;margin:16px auto 0}
+.form-group{margin-bottom:18px}.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)}
+.form-control{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:'Raleway',sans-serif;background:var(--white);color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none}
+.form-control:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,138,133,.12)}textarea.form-control{resize:vertical;min-height:100px}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:50px;background:#25D366;color:var(--white);font-size:.9rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:'Raleway',sans-serif;text-decoration:none}.wa-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+.footer{background:var(--teal-dark);color:var(--white)}.footer-main{max-width:1160px;margin:0 auto;padding:60px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:300px}.footer-logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--white)}.footer-logo-sub{font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+.foot-col h5{font-family:'Lora',serif;font-size:1rem;margin-bottom:18px}.foot-col ul li{margin-bottom:10px}.foot-col ul li a{font-size:.85rem;color:rgba(255,255,255,.7);transition:color .2s}.foot-col ul li a:hover{color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.15);text-align:center;padding:20px 24px;font-size:.82rem;color:rgba(255,255,255,.55)}
+.cookie{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--teal-dark);color:var(--white);border-radius:14px;padding:18px 24px;max-width:580px;width:calc(100% - 48px);box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:20px;flex-wrap:wrap;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.cookie h5{font-family:'Lora',serif;font-size:.95rem;margin-bottom:4px}.cookie p{font-size:.8rem;color:rgba(255,255,255,.75)}.cookie-text{flex:1;min-width:200px}.cookie-btns{display:flex;gap:10px}
+.c-btn{padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;font-family:'Raleway',sans-serif}.c-accept{background:var(--white);color:var(--teal-dark)}.c-decline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3)}
+.toast{position:fixed;top:90px;right:24px;z-index:9998;background:var(--teal-dark);color:var(--white);padding:14px 20px;border-radius:12px;font-size:.9rem;font-weight:600;box-shadow:var(--shl);animation:fadeIn .3s ease;display:none}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+main{animation:pageIn .35s ease}@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.footer-main{grid-template-columns:1fr}}
+/* PAGE SPECIFIC */
+.join-hero{background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal) 55%,var(--teal-mid) 100%);padding:80px 24px;text-align:center;position:relative;overflow:hidden}
+.join-hero::before{content:'🧬';position:absolute;right:5%;bottom:-20px;font-size:14rem;opacity:.07;line-height:1}
+.join-hero::after{content:'🔬';position:absolute;left:3%;top:10px;font-size:10rem;opacity:.06;line-height:1}
+.join-hero-content{position:relative;z-index:1}
+.join-hero h1{color:var(--white);margin-bottom:16px}
+.join-hero p{color:rgba(255,255,255,.85);font-size:1.05rem;max-width:560px;margin:0 auto}
+.breadcrumb{background:var(--teal-light);padding:12px 24px;border-bottom:1px solid var(--border)}
+.breadcrumb-inner{max-width:1160px;margin:0 auto;font-size:.83rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.breadcrumb a{color:var(--teal);font-weight:600}.breadcrumb a:hover{text-decoration:underline}
+/* WHY JOIN */
+.why-section{padding:72px 24px;background:var(--off)}
+.why-inner{max-width:1100px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head .tag{display:inline-block;padding:5px 16px;border-radius:100px;background:var(--teal-light);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.sec-head h2{color:var(--text);margin-bottom:12px}
+.sec-head p{max-width:560px;margin:0 auto;font-size:.95rem}
+.divider{width:52px;height:3px;background:var(--teal);border-radius:2px;margin:16px auto 0}
+.perks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.perk-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;box-shadow:var(--sh);transition:all .3s}
+.perk-card:hover{transform:translateY(-6px);box-shadow:var(--shl);border-color:var(--teal-mid)}
+.perk-icon{font-size:2.6rem;margin-bottom:14px}
+.perk-card h4{color:var(--teal-dark);margin-bottom:10px;font-size:1rem}
+.perk-card p{font-size:.86rem;line-height:1.7}
+/* CULTURE STRIP */
+.culture-strip{background:linear-gradient(135deg,var(--teal-dark),var(--teal));padding:60px 24px}
+.culture-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.culture-text h2{color:var(--white);margin-bottom:16px}
+.culture-text p{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.8;margin-bottom:12px}
+.culture-stats{display:flex;flex-direction:column;gap:20px}
+.c-stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:20px 24px;display:flex;align-items:center;gap:16px}
+.c-stat-n{font-family:'Lora',serif;font-size:2rem;font-weight:700;color:var(--white);flex-shrink:0;min-width:60px}
+.c-stat-l{color:rgba(255,255,255,.85);font-size:.88rem;font-weight:600}
+/* ROLES */
+.roles-section{padding:72px 24px;background:var(--white)}
+.roles-inner{max-width:900px;margin:0 auto}
+.roles-note{background:var(--teal-light);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:40px;display:flex;align-items:flex-start;gap:14px}
+.roles-note-icon{font-size:1.6rem;flex-shrink:0}
+.roles-note-text h4{color:var(--teal-dark);margin-bottom:6px}
+.roles-note-text p{font-size:.88rem}
+.dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:32px}
+.dept-chip{background:var(--teal-light);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;transition:all .25s}
+.dept-chip:hover{background:var(--mint);transform:translateY(-3px)}
+.dept-icon{font-size:1.8rem;margin-bottom:8px}
+.dept-chip h5{color:var(--teal-dark);font-size:.9rem;margin-bottom:4px}
+.dept-chip p{font-size:.78rem}
+/* FORM SECTION */
+.form-section{padding:72px 24px;background:var(--off)}
+.form-inner{max-width:660px;margin:0 auto}
+.apply-card{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:42px;box-shadow:var(--shl)}
+.apply-card h2{margin-bottom:6px}
+.apply-subtitle{font-size:.9rem;color:var(--muted);margin-bottom:28px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:7px;color:var(--text)}
+.form-group label span{color:#e55;font-size:.9em}
+.form-control{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:'Raleway',sans-serif;background:var(--white);color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none}
+.form-control:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,138,133,.12)}
+textarea.form-control{resize:vertical;min-height:110px}
+select.form-control{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6e6d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.file-upload-area{border:2px dashed var(--border);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;background:var(--off)}
+.file-upload-area:hover,.file-upload-area.drag{border-color:var(--teal);background:var(--teal-light)}
+.file-upload-area input[type=file]{display:none}
+.upload-icon{font-size:2rem;margin-bottom:8px}
+.upload-text{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.upload-sub{font-size:.78rem;color:var(--muted)}
+.file-name{font-size:.83rem;color:var(--teal);font-weight:600;margin-top:8px;display:none}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{width:100%;padding:14px;border-radius:50px;background:var(--teal);color:var(--white);font-size:.97rem;font-weight:700;cursor:pointer;border:none;transition:all .25s;font-family:'Raleway',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px}
+.submit-btn:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:var(--sh)}
+.recaptcha-note{font-size:.75rem;text-align:center;margin-top:12px;color:var(--muted)}.recaptcha-note a{color:var(--teal)}
+.form-divider{border:none;border-top:1px solid var(--border);margin:24px 0}
+.wa-apply{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.wa-apply p{font-size:.88rem;color:var(--muted)}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:50px;background:#25D366;color:var(--white);font-size:.9rem;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:'Raleway',sans-serif;text-decoration:none}
+.wa-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+/* SUCCESS */
+.success-msg{display:none;background:var(--teal-light);border:1.5px solid var(--teal);border-radius:12px;padding:18px 20px;margin-bottom:20px;font-size:.9rem;font-weight:600;color:var(--teal-dark);align-items:center;gap:10px}
+/* FOOTER */
+.footer{background:var(--teal-dark);color:var(--white)}
+.footer-main{max-width:1160px;margin:0 auto;padding:60px 24px 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:300px}
+.footer-logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--white)}.footer-logo-sub{font-size:.72rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+.foot-col h5{font-family:'Lora',serif;font-size:1rem;margin-bottom:18px}.foot-col ul li{margin-bottom:10px}.foot-col ul li a{font-size:.85rem;color:rgba(255,255,255,.7);transition:color .2s}.foot-col ul li a:hover{color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.15);text-align:center;padding:20px 24px;font-size:.82rem;color:rgba(255,255,255,.55)}
+.cookie{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--teal-dark);color:var(--white);border-radius:14px;padding:18px 24px;max-width:580px;width:calc(100% - 48px);box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:20px;flex-wrap:wrap;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.cookie h5{font-family:'Lora',serif;font-size:.95rem;margin-bottom:4px}.cookie p{font-size:.8rem;color:rgba(255,255,255,.75)}.cookie-text{flex:1;min-width:200px}.cookie-btns{display:flex;gap:10px}
+.c-btn{padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:700;cursor:pointer;border:none;font-family:'Raleway',sans-serif}.c-accept{background:var(--white);color:var(--teal-dark)}.c-decline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3)}
+main{animation:pageIn .35s ease}@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.culture-inner{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.form-row-2{grid-template-columns:1fr}.apply-card{padding:28px 20px}.footer-main{grid-template-columns:1fr}.perks-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.perks-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-top"><a href="tel:+919604629953">📞 +91-9604629953</a></div>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><div class="logo-icon">MB</div><div><span class="logo-name">Microworld Biotech</span><span class="logo-sub">PRIVATE LIMITED</span></div></a>
+    <ul class="nav-links">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="our-founders.html">Our Founders</a></li>
+      <li class="nav-item">
+        <button class="nav-link">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <ul class="dropdown">
+          <li><a class="drop-item" href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a></li>
+          <li><a class="drop-item" href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a></li>
+          <li><a class="drop-item" href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a></li>
+          <li><a class="drop-item" href="pregnancy-test-kit.html">Pregnancy Test Kit</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link active" href="join-our-team.html">Join Our Team</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-overlay" id="mob">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">✕</button>
+    <a class="mob-item" href="index.html">Home</a>
+    <a class="mob-item" href="our-founders.html">Our Founders</a>
+    <div class="mob-item" id="mobProd">Products <span id="prodArrow">▼</span></div>
+    <div id="mobProdSub" style="display:none">
+      <a class="mob-sub" href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a>
+      <a class="mob-sub" href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a>
+      <a class="mob-sub" href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a>
+      <a class="mob-sub" href="pregnancy-test-kit.html">Pregnancy Test Kit</a>
+    </div>
+    <a class="mob-item" href="join-our-team.html">Join Our Team</a>
+    <a class="mob-item" href="contact-us.html">Contact Us</a>
+    <div style="padding:20px 24px"><a href="tel:+919604629953" style="color:var(--teal);font-weight:700">📞 +91-9604629953</a></div>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="join-hero">
+  <div class="join-hero-content">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:7px 18px;border-radius:100px;font-size:.8rem;font-weight:700;color:var(--white);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px">🌱 We're Hiring!</div>
+    <h1>Join Our Team</h1>
+    <p>Join our growing team at Microworld Biotech and contribute to innovative biotechnology solutions that improve lives globally.</p>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner"><a href="index.html">Home</a> <span>›</span> <span>Join Our Team</span></div>
+</div>
+
+<!-- WHY JOIN -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="sec-head">
+      <div class="tag">Why Microworld Biotech?</div>
+      <h2>Work Where It Matters</h2>
+      <p>We are a purpose-driven company at the intersection of science, healthcare, and innovation. Here's why people love working with us.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="perks-grid">
+      <div class="perk-card">
+        <div class="perk-icon">🌱</div>
+        <h4>Grow With Us</h4>
+        <p>Be a core part of a fast-growing IVD diagnostics company from the ground up. Your growth is our growth — we invest in our people.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🧬</div>
+        <h4>Meaningful Work</h4>
+        <p>Your contributions directly impact healthcare outcomes for thousands of patients. Every role here makes a real difference in people's lives.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🏭</div>
+        <h4>MIDC Location</h4>
+        <p>Based in Krushnoor MIDC, Nanded, Maharashtra — a well-connected industrial hub with excellent infrastructure and facilities.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🤝</div>
+        <h4>Collaborative Culture</h4>
+        <p>Work alongside founders and experienced pharma professionals in a flat, open culture that values every voice and idea.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">📈</div>
+        <h4>Career Progression</h4>
+        <p>Clear growth paths across sales, operations, R&amp;D, and management. We promote from within and reward initiative and performance.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">💡</div>
+        <h4>Innovation-First</h4>
+        <p>We encourage new thinking, process improvements, and creative solutions. If you have a better way to do something, we want to hear it.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🎓</div>
+        <h4>Learning &amp; Development</h4>
+        <p>Continuous training on new diagnostics technology, regulatory knowledge, and industry best practices keeps you ahead of the curve.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🏥</div>
+        <h4>Healthcare Impact</h4>
+        <p>Be part of the solution to India's diagnostic gap — helping bring accurate, affordable testing to clinics, hospitals, and remote areas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE STRIP -->
+<section class="culture-strip">
+  <div class="culture-inner">
+    <div class="culture-text">
+      <h2>A Team Built on Passion &amp; Purpose</h2>
+      <p>At Microworld Biotech, we believe that great products are built by great people. Our team brings together diverse expertise from pharmaceuticals, sales, quality control, and supply chain — all united by one goal: making diagnostics accessible to all.</p>
+      <p>We foster a culture of respect, ownership, and continuous improvement. Whether you're in the lab or in the field, you'll find support, recognition, and opportunities to grow here.</p>
+    </div>
+    <div class="culture-stats">
+      <div class="c-stat">
+        <div class="c-stat-n">2023</div>
+        <div class="c-stat-l">Founded with a mission to transform diagnostics in India</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-n">4+</div>
+        <div class="c-stat-l">Innovative rapid diagnostic products launched and growing</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-n">45+</div>
+        <div class="c-stat-l">Combined years of founder experience in pharma &amp; healthcare</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN DEPARTMENTS -->
+<section class="roles-section">
+  <div class="roles-inner">
+    <div class="sec-head" style="text-align:center;margin-bottom:32px">
+      <div class="tag">Open Opportunities</div>
+      <h2 style="margin-top:12px">Departments We're Growing</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="roles-note">
+      <div class="roles-note-icon">📋</div>
+      <div class="roles-note-text">
+        <h4>Open &amp; Future Roles</h4>
+        <p>We are always looking for motivated individuals across multiple functions. Even if your specific role isn't listed, we encourage you to apply — we'll reach out when the right opportunity arises.</p>
+      </div>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-chip"><div class="dept-icon">🔬</div><h5>Research &amp; Development</h5><p>Product innovation and assay development</p></div>
+      <div class="dept-chip"><div class="dept-icon">📦</div><h5>Quality Control</h5><p>Ensuring every kit meets highest standards</p></div>
+      <div class="dept-chip"><div class="dept-icon">📊</div><h5>Sales &amp; Marketing</h5><p>B2B healthcare sales and brand building</p></div>
+      <div class="dept-chip"><div class="dept-icon">🚚</div><h5>Supply Chain</h5><p>Procurement, logistics and distribution</p></div>
+      <div class="dept-chip"><div class="dept-icon">⚙️</div><h5>Manufacturing</h5><p>Production and process management</p></div>
+      <div class="dept-chip"><div class="dept-icon">📋</div><h5>Regulatory Affairs</h5><p>Compliance, documentation &amp; approvals</p></div>
+      <div class="dept-chip"><div class="dept-icon">💼</div><h5>Administration</h5><p>HR, accounts and back-office operations</p></div>
+      <div class="dept-chip"><div class="dept-icon">🤝</div><h5>Business Development</h5><p>Partnerships, distribution &amp; expansion</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="form-section">
+  <div class="form-inner">
+    <div style="text-align:center;margin-bottom:32px">
+      <div class="tag" style="display:inline-block;margin-bottom:12px">Apply Now</div>
+      <h2 style="margin-top:12px">Start Your Application</h2>
+      <p style="margin-top:10px;font-size:.93rem">If you're passionate about healthcare diagnostics and want to make a difference, we'd love to hear from you. Fill in the form below and attach your resume.</p>
+    </div>
+
+    <div class="apply-card">
+      <h2>Application Form</h2>
+      <p class="apply-subtitle">Fields marked with <span style="color:#e55">*</span> are required.</p>
+
+      <div id="successMsg" class="success-msg">✅ Application submitted! We'll review your profile and reach out soon.</div>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>First Name <span>*</span></label>
+          <input class="form-control" id="fname" placeholder="First name"/>
+        </div>
+        <div class="form-group">
+          <label>Last Name <span>*</span></label>
+          <input class="form-control" id="lname" placeholder="Last name"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number <span>*</span></label>
+        <input class="form-control" id="fphone" type="tel" placeholder="+91 XXXXX XXXXX"/>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address <span>*</span></label>
+        <input class="form-control" id="femail" type="email" placeholder="your@email.com"/>
+      </div>
+
+      <div class="form-group">
+        <label>Department / Role You're Interested In</label>
+        <select class="form-control" id="fdept">
+          <option value="">— Select a department —</option>
+          <option>Research &amp; Development</option>
+          <option>Quality Control</option>
+          <option>Sales &amp; Marketing</option>
+          <option>Supply Chain &amp; Logistics</option>
+          <option>Manufacturing</option>
+          <option>Regulatory Affairs</option>
+          <option>Administration</option>
+          <option>Business Development</option>
+          <option>Other / Open to Opportunities</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Years of Experience</label>
+        <select class="form-control" id="fexp">
+          <option value="">— Select experience —</option>
+          <option>Fresher (0–1 years)</option>
+          <option>1–3 years</option>
+          <option>3–5 years</option>
+          <option>5–10 years</option>
+          <option>10+ years</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Cover Letter / Why do you want to join us?</label>
+        <textarea class="form-control" id="fmsg" placeholder="Tell us a bit about yourself, your experience, and why you'd like to join Microworld Biotech..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Attach Resume <span style="color:var(--muted);font-weight:400">(PDF, DOC, DOCX — max 5MB)</span></label>
+        <div class="file-upload-area" id="dropZone" onclick="document.getElementById('fresume').click()" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+          <input type="file" id="fresume" accept=".pdf,.doc,.docx" onchange="handleFileSelect(event)"/>
+          <div class="upload-icon">📎</div>
+          <div class="upload-text">Click to browse or drag &amp; drop your resume here</div>
+          <div class="upload-sub">PDF, DOC or DOCX files only</div>
+          <div class="file-name" id="fileName"></div>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="submitApplication()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        Submit Application
+      </button>
+
+      <p class="recaptcha-note">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+
+      <hr class="form-divider"/>
+
+      <div class="wa-apply">
+        <p>Prefer to reach out directly? Send us your resume on WhatsApp!</p>
+        <a class="wa-btn" href="https://wa.me/919604629953" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.552 4.1 1.518 5.822L.057 23.927l6.263-1.445A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.796 9.796 0 01-4.998-1.37l-.358-.213-3.718.858.883-3.633-.234-.374A9.765 9.765 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"/></svg>
+          Send Resume via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px"><div class="logo-icon">MB</div><div><span class="footer-logo-name">Microworld Biotech</span><br><span class="footer-logo-sub">PRIVATE LIMITED</span></div></div>
+      <p>Smart Diagnostics, Better Decisions! Leading provider of diagnostic test kits using immunochromatography technology.</p>
+      <a class="wa-btn" href="https://wa.me/919604629953" target="_blank" rel="noreferrer" style="margin-top:16px">WhatsApp Us</a>
+    </div>
+    <div class="foot-col"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="our-founders.html">Our Founders</a></li><li><a href="join-our-team.html">Join Our Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div>
+    <div class="foot-col"><h5>Our Products</h5><ul><li><a href="dengue-combo-test-kit.html">Dengue Combo Test Kit</a></li><li><a href="typhoid-rapid-test-kit.html">Typhoid Rapid Test Kit</a></li><li><a href="malaria-antigen-test-kit.html">Malaria Antigen Test Kit</a></li><li><a href="pregnancy-test-kit.html">Pregnancy Test Kit</a></li></ul></div>
+  </div>
+  <div class="footer-bot">Copyright © 2026 Microworld Biotech — All Rights Reserved. &nbsp;|&nbsp; Plot No B-95, Krushnoor MIDC, TQ. Naigaon, Dist. Nanded — 431709</div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <div class="cookie-text"><h5>This website uses cookies.</h5><p>We use cookies to analyze website traffic and optimize your website experience. By accepting, your data will be aggregated with all other user data.</p></div>
+  <div class="cookie-btns">
+    <button class="c-btn c-decline" onclick="document.getElementById('cookie').remove()">Decline</button>
+    <button class="c-btn c-accept" onclick="document.getElementById('cookie').remove()">Accept</button>
+  </div>
+</div>
+
+<script>
+// Mobile menu
+const ham=document.getElementById('ham'),mob=document.getElementById('mob'),mobClose=document.getElementById('mobClose');
+ham.addEventListener('click',()=>mob.classList.add('open'));
+mobClose.addEventListener('click',()=>mob.classList.remove('open'));
+mob.addEventListener('click',e=>{if(e.target===mob)mob.classList.remove('open')});
+const mobProd=document.getElementById('mobProd'),sub=document.getElementById('mobProdSub'),arr=document.getElementById('prodArrow');
+mobProd.addEventListener('click',()=>{const o=sub.style.display==='block';sub.style.display=o?'none':'block';arr.textContent=o?'▼':'▲'});
+
+// File upload
+function handleFileSelect(e){
+  const f=e.target.files[0];
+  if(f){const fn=document.getElementById('fileName');fn.textContent='📄 '+f.name;fn.style.display='block';}
+}
+function handleDragOver(e){e.preventDefault();document.getElementById('dropZone').classList.add('drag');}
+function handleDragLeave(){document.getElementById('dropZone').classList.remove('drag');}
+function handleDrop(e){
+  e.preventDefault();document.getElementById('dropZone').classList.remove('drag');
+  const f=e.dataTransfer.files[0];
+  if(f){document.getElementById('fresume').files=e.dataTransfer.files;const fn=document.getElementById('fileName');fn.textContent='📄 '+f.name;fn.style.display='block';}
+}
+
+// Form submit
+function submitApplication(){
+  const fn=document.getElementById('fname').value.trim();
+  const ln=document.getElementById('lname').value.trim();
+  const ph=document.getElementById('fphone').value.trim();
+  const em=document.getElementById('femail').value.trim();
+  if(!fn||!ln||!ph||!em){alert('Please fill in all required fields (First Name, Last Name, Phone, Email).');return;}
+  if(!/^\S+@\S+\.\S+$/.test(em)){alert('Please enter a valid email address.');return;}
+  const msg=document.getElementById('successMsg');
+  msg.style.display='flex';
+  ['fname','lname','fphone','femail','fdept','fexp','fmsg'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('fileName').style.display='none';
+  msg.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+</body>
+</html>
